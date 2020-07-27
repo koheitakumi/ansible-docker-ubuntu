@@ -1,0 +1,5 @@
+- hosts: target
+  tasks:
+  - name: "Test"
+    shell: |
+        wget https://github.com/koheitakumi/ansible-docker-ubuntu/blob/master/README.md
