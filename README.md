@@ -86,12 +86,16 @@ We prepare ansible server and inventries by docker-compose command. After connec
 
     ls
     # README.md
+
+    exit
     ```
     ```bash
     ssh target02
 
     ls
     # README.md
+
+    exit
     ```
 
 ### Clean this project up
