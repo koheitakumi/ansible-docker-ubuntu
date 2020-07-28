@@ -23,18 +23,18 @@ We prepare ansible server and inventries by docker-compose command. After connec
         ```bash
         ssh-keygen -t ed25519 -N "" -f ~/.ssh/test_id_rsa
         ```
-        If you're machine is windows, please check [this article](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows). I recommend you to use Git Bash because I suppose you have already install it to use git.
+        If you're machine is windows, please check [this article](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows). I could recommend you to use Git Bash because I suppose you have already installed it to use git.
     1. Copy the content to the file.
         - Secret key: Copy the content of test_id_rsa and paste it to docker/ansible/id_rsa
         - Public key: Copy the content of test_id_rsa.pub and paste it to docker/target/id_rsa.pub
 
 ### Build and run
 
-1. Build containers with docker-compose.
+1. Build containers by docker-compose.
     ```bash
     docker-compose up -d
     ```
-1. Check the containers which just are built.
+1. Check the containers which have just built.
     ```bash
     docker ps
     ```
@@ -99,7 +99,7 @@ We prepare ansible server and inventries by docker-compose command. After connec
     exit
     ```
 
-### Clean this project up
+### Clean up
 
 1. Disconnect ansible server.
     ```bash
@@ -124,7 +124,7 @@ We prepare ansible server and inventries by docker-compose command. After connec
     ```bash
     docker ps -a
     ```
-1. Remove all images
+1. Remove all images on this project
     ```bash
     docker rmi ansible-docker-ubuntu_ansible ansible-docker-ubuntu_target01 ansible-docker-ubuntu_target02
     ```
