@@ -4,12 +4,24 @@ FROM ubuntu:bionic
 LABEL maintainter="user_name"
 
 # install openssh-server and python
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends openssh-server python2.7 python-pip && \
-    apt-get clean
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        openssh-server  \
+        python2.7 python-pip \
+        apt-utils \
+        software-properties-common \
+        wget \
+        locales \
+        rsyslog \
+        systemd \ 
+        systemd-cron \
+        sudo \
+    && apt-get update \
+    && rm -Rf /var/lib/apt/lists/* \
+    && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
+    && apt-get clean
 
-# Just for TEST. Please remove it for another use case.
-RUN apt-get install -y wget
+RUN locale-gen en_US.UTF-8
 
 # Make directory for sshd
 RUN mkdir /var/run/sshd
