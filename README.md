@@ -18,11 +18,12 @@ We prepare ansible server and inventries by docker-compose command. After connec
 1. Generate a SSH key pair.
     - The secret key is for the ansible server to access inventries.
     - The public key is for the inventries to accept the ansible server.
+
     1. Generate key pair for this sample.
-    ```bash
-    ssh-keygen -t ed25519 -N "" -f ~/.ssh/test_id_rsa
-    ```
-    If you're machine is windows, please check [this article](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows). I recommend you to use Git Bash because I suppose you have already install it to use git.
+        ```bash
+        ssh-keygen -t ed25519 -N "" -f ~/.ssh/test_id_rsa
+        ```
+        If you're machine is windows, please check [this article](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows). I recommend you to use Git Bash because I suppose you have already install it to use git.
     1. Copy the content to the file.
         - Secret key: Copy the content of test_id_rsa and paste it to docker/ansible/id_rsa
         - Public key: Copy the content of test_id_rsa.pub and paste it to docker/target/id_rsa.pub
